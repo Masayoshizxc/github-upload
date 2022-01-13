@@ -1,0 +1,27 @@
+/* Task from acmp , finding from snake-table element by position of row and column. */
+
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+using namespace std;
+int main() {
+	srand(time(NULL));
+	int q, w;
+	cin >> q >> w;
+	int** a = new int* [q];
+	for (int i = 0; i < q; i++) {
+		a[i] = new int[w];
+	}
+	for (int i = 0; i < q; i++) {
+		for (int j = 0; j < w; j++) {
+			a[i][j] = rand() % 10 + 1;
+		}
+	}
+	for (int i = 0; i < q; i++) {
+		for (int j = 0; j < w; j++) {
+			cout << a[i][j] << ' ';
+		}
+		cout << endl;
+	}
+	return 0;
+}
